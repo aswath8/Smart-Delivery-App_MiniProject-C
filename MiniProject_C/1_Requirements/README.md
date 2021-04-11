@@ -24,37 +24,21 @@ According to BRC the global online food delivery services market is expected gro
 
 With growth of Technologies and increase in usage of smartphone online delivery system is sure to grow in exponential manner so the application designed in this project may have a wide effect in the industry.
 
-![chart](Link: https://www.grandviewresearch.com/static/img/research/asia-pacific-online-food-delivery-services-market.png)
+![chart](https://www.grandviewresearch.com/static/img/research/asia-pacific-online-food-delivery-services-market.png)
 
 ### Advantages of online delivery system:
 
 #### Makes the ordering process easier
-Traditionally, people had to make calls to place orders 
-
-or drive to the restaurants for a take-out, then wait for the food to be prepared and delivered.
-
-Sometimes, placing an order on the phone means that there could be mistakes in order, but online delivery system make all these easier.
+Traditionally, people had to make calls to place orders or drive to the restaurants for a take-out, then wait for the food to be prepared and delivered. Sometimes, placing an order on the phone means that there could be mistakes in order, but online delivery system make all these easier.
 
 #### Efficient customer and order management
-It provides a complete sales dashboard with information about new/active/canceled orders, 
-
-lifetime sales details, etc. 
-
-The user can track the order easily.
+It provides a complete sales dashboard with information about new/active/canceled orders, lifetime sales details, etc. The user can track the order easily.
 
 #### Better customers data
-The delivery app makes it easier to analyze ordering trends and customer 
-
-preferences in depth so customer can get their customized menu, 
-
-offerings, deals prices, and so on to provide a tailored experience to everyone.
+The delivery app makes it easier to analyze ordering trends and customer preferences in depth so customer can get their customized menu, offerings, deals prices, and so on to provide a tailored experience to everyone.
 
 #### The convenience of mobile ordering
-From meetings to crowded areas, there are times when one may not be able 
-
-to make a phone call to order food. Online ordering allows customers
-
-to order anytime, anywhere using their mobiles, tablets or other handheld devices.
+From meetings to crowded areas, there are times when one may not be able to make a phone call to order food. Online ordering allows customers to order anytime, anywhere using their mobiles, tablets or other handheld devices.
 
 ## Cost and Features with 
 
