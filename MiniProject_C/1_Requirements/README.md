@@ -24,7 +24,9 @@ According to BRC the global online food delivery services market is expected gro
 
 With growth of Technologies and increase in usage of smartphone online delivery system is sure to grow in exponential manner so the application designed in this project may have a wide effect in the industry.
 
-![chart](https://www.grandviewresearch.com/static/img/research/asia-pacific-online-food-delivery-services-market.png)
+<p align="center">
+  <img width="460" height="300" src="https://www.grandviewresearch.com/static/img/research/asia-pacific-online-food-delivery-services-market.png">
+</p>
 
 ### Advantages of online delivery system:
 
@@ -40,6 +42,7 @@ The delivery app makes it easier to analyze ordering trends and customer prefere
 #### The convenience of mobile ordering
 From meetings to crowded areas, there are times when one may not be able to make a phone call to order food. Online ordering allows customers to order anytime, anywhere using their mobiles, tablets or other handheld devices.
 
+![Advantages](https://github.com/JeevakRaj/Smart-Delivery-App_MiniProject-C/blob/main/MiniProject_C/1_Requirements/ADVANTAGES%20OF%20SMART%20DELIVERY%20APP.png)
 ## Cost and Features with 
 
 TBD
