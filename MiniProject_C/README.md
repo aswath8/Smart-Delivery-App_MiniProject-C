@@ -5,7 +5,7 @@ Visit [Pages for Report -optional](using github.io option)
 
 Build | Code Quality | Unity | [Git Inspector](using github.io option)
 ------|----------|-------|--------------
-[![C/C++ CI - Build Status](https://github.com/JeevakRaj/Smart-Delivery-App_MiniProject-C/actions/workflows/main.yml/badge.svg)](https://github.com/JeevakRaj/Smart-Delivery-App_MiniProject-C/actions/workflows/main.yml)| To be added | To be added | To be added
+[![C/C++ CI - Build Status](https://github.com/JeevakRaj/Smart-Delivery-App_MiniProject-C/actions/workflows/main.yml/badge.svg)](https://github.com/JeevakRaj/Smart-Delivery-App_MiniProject-C/actions/workflows/main.yml)| To be added | [![Unit Testing - Unity](https://github.com/JeevakRaj/Smart-Delivery-App_MiniProject-C/actions/workflows/unity.yml/badge.svg)](https://github.com/JeevakRaj/Smart-Delivery-App_MiniProject-C/actions/workflows/unity.yml) | To be added
 
 
 ## Folder Structure
