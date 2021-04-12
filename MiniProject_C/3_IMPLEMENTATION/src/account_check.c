@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include"smart_delivery.h"
 #include<string.h>
-
+#include<stdlib.h>
 
 int account_check(char* temp_mail_id,char* temp_password1,char* temp_name,char* temp_mobile)
 {
@@ -20,10 +20,10 @@ int account_check(char* temp_mail_id,char* temp_password1,char* temp_name,char* 
         {
             column = 0;
 	    char *value = malloc(2048);
-    	    if (!result) {
+    	    if (!value) {
             return 1;
     	    }
-            char* value = strtok(buffer, ",");
+            value = strtok(buffer, ",");
   
             while (value) {
                 if (column == 1) {
