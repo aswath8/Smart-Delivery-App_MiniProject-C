@@ -60,11 +60,12 @@ As far as the project is well built and all the requirements met the cost can be
 
 ## Defining Our System
 
-![Defining the system](https://github.com/JeevakRaj/Smart-Delivery-App_MiniProject-C/blob/main/MiniProject_C/1_Requirements/System.jpg)
+![Defining the system](https://github.com/JeevakRaj/Smart-Delivery-App_MiniProject-C/blob/main/MiniProject_C/1_Requirements/Defining%20System.jpg)
 
 Whenever the user opens the application, they are asked to signup if they don't have an account or login with the existing username and password. Next they are asked to Choose the Delivery system whether food or medicine, the cost of the products are displayed and the order is confirmed. The User is asked to enter the location details; Later OTP is verified and the order is delivered. 
 
 ## SWOT ANALYSIS
+![SWOT_ANALYSIS](https://github.com/JeevakRaj/Smart-Delivery-App_MiniProject-C/blob/main/MiniProject_C/1_Requirements/SWOT.jpg)
 
 ## Who:
 This is a user friendly application and can be used by all from students to elderly aged people. They can easily order the Food/medicine through this and can be received at their door-step.
@@ -84,9 +85,20 @@ The User chooses the delivery system and the order is confirmed, Once he receive
 
 # Detail requirements
 ## High Level Requirements: 
-| ID | 
-
+| ID | Description | Status |
+| --- | --- | --- |
+HLR01 | Operating System (Windows 10/Linux) | Implemented ✔
+HLR02 | C language | Implemented ✔
+HLR03 | Application must be interactable | Implemented ✔
+HLR04 | Application should be user friendly | Implemented ✔
+HLR05 | Data should not be lost in case of faliure | Future
 
 ##  Low level 
-
+| ID | Description | Status |
+| --- | --- | --- |
+LLR01 | **Cross compatibility:** <br/> The application must use open source tools which is available on both windows and linux. <br/> The application should use: <br/> 1. GCC Compiler<br/>2. Build system using Make | Implemented ✔ 
+LLR02 | **For Login & Signup:** <br/> 1. The user credentails must be validated<br/>2. Application should be capable of saving the user details to a CSV file<br/>3. The details must be compared with the database and then stored to avoid redendency | Implemented ✔ 
+LLR03 | The User should be able to choose the delivery system: food/medicine and results must be processed accordingly | Implemented ✔ 
+LLR04 | Ther user must be able to see the cart details and confirm the order | Implemented ✔ 
+LLR05 | OTP must be verified and then the product should be delivered | Implemented ✔ 
 
