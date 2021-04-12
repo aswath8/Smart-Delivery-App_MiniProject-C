@@ -10,13 +10,13 @@ int account_check(char* temp_mail_id,char* temp_password1,char* temp_name,char* 
     {
 		printf("Can't open file\n");
 	}
-    char buffer[1024];
+    char buffer[100];
     int row = 0;
     int column = 0;
     int i=0;
     int count=0;
     int res;
-    while (fgets(buffer,1024, fp)) 
+    while (fgets(buffer,100, fp)) 
         {
             column = 0;
             char* value = strtok(buffer, ",");
