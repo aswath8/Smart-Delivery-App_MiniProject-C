@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include"smart_delivery.h"
 #include<string.h>
-#include <conio.h>
 
 
 int account_check(char* temp_mail_id,char* temp_password1,char* temp_name,char* temp_mobile)
