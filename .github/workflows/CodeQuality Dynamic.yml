@@ -19,4 +19,4 @@ jobs:
     - name: make test
       run: make -C MiniProject_C/3_IMPLEMENTATION/ test
     - name: Valgrid
-      run: valgrind ./MiniProject_C/3_IMPLEMENTATION/build/Test_Calculator.out
+      run: valgrind ./MiniProject_C/3_IMPLEMENTATION/Build/Test_smart_delivery_app.out
