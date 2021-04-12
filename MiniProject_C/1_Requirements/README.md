@@ -43,28 +43,44 @@ The delivery app makes it easier to analyze ordering trends and customer prefere
 From meetings to crowded areas, there are times when one may not be able to make a phone call to order food. Online ordering allows customers to order anytime, anywhere using their mobiles, tablets or other handheld devices.
 
 ![Advantages](https://github.com/JeevakRaj/Smart-Delivery-App_MiniProject-C/blob/main/MiniProject_C/1_Requirements/ADVANTAGES%20OF%20SMART%20DELIVERY%20APP.png)
+
 ## Cost and Features with 
 
-TBD
+### Cost:
+As far as the project is well built and all the requirements met the cost can be varied according to the market.
+
+### Features:
+1. Login- The Entered details are compared with the database if the credentials matches, the user is successfully logged in.
+2. Signup- The user is asked for the details and they are validated, Once validation is complete the details are compared with the database and account is created.
+3. Choosing the Delivery system - The user chooses the delivery system as food or medicine.
+4. Cart details - The cost of the products are Displayed.
+5. Order Confirmation - Confirming the order.
+6. Location details - The User is asked to enter the location details.
+7. OTP Authentication - Once the users receives the product, he/she is asked to provide the OTP; if it matches then order is delivered. 
 
 ## Defining Our System
+
+![Defining the system](https://github.com/JeevakRaj/Smart-Delivery-App_MiniProject-C/blob/main/MiniProject_C/1_Requirements/System.jpg)
+
+Whenever the user opens the application, they are asked to signup if they don't have an account or login with the existing username and password. Next they are asked to Choose the Delivery system whether food or medicine, the cost of the products are displayed and the order is confirmed. The User is asked to enter the location details; Later OTP is verified and the order is delivered. 
 
 ## SWOT ANALYSIS
 
 ## Who:
-
+This is a user friendly application and can be used by all from students to elderly aged people. They can easily order the Food/medicine through this and can be received at their door-step.
 
 ## What:
-
+This is user friendly application through which people can choose the delivery system they want food/medicine, Order is confirmed and the product is delivered.
 
 ## When:
-
+During peak hours going to shop and buying food is difficult, so this application can be used and the food is delivered to their doorstep.
+During pandemic situations where social distancing is highly important, ordering food can be done online through this application.
 
 ## Where:
-
+It can be used in all the delivery systems . As the project is portable and user-friendly, it can be easily implemented on the mobile phones, web browsers, systems and TV's. It should overcome all the drawbacks of the traditional systems.
 
 ## How:
-
+The User chooses the delivery system and the order is confirmed, Once he receives the product OTP is verified and the product is delivered.
 
 # Detail requirements
 ## High Level Requirements: 
