@@ -18,17 +18,10 @@ Folder             | Description
 
 ## Contributors List and Summary
 
-SF Id. |  Name   |    Features    | Issuess Raised |Issues Resolved|No Test Cases|Test Case Pass
--------|---------|----------------|----------------|---------------|-------------|--------------
-`256040` | JEEVAK RAJ  | Feature A, B etc    | X No     | X No   |X No   |X No     
+SF Id. |  Name   |    Features    | 
+-------|---------|----------------|
+`256040` | JEEVAK RAJ  | Implemented all the features|
    
-
-## Challenges Faced and How Was It Overcome
-
-1. ABC
-2. BCD
-3. ...
-4. ...
 
 ## Learning Resources
 1. [markdownCheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
