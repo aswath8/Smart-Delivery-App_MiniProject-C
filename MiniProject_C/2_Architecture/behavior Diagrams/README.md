@@ -1,6 +1,6 @@
 # Behavior Diagrams
 
-##Behavior Diagrams (HLD)
+## Behavior Diagrams (HLD)
 
 ## Usecase Diagram
 
