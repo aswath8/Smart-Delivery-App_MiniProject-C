@@ -49,4 +49,5 @@ int cart(int total)
         printf("correct choice\n\n");
         cart(total);
     }
+    return 0;
 }
