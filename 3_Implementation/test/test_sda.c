@@ -89,7 +89,6 @@ int main(void)
     RUN_TEST(test_validate_number1);
     RUN_TEST(test_validate_number2);
     RUN_TEST(test_location);
-    RUN_TEST(test_cart);
 
     return UNITY_END();
 }
