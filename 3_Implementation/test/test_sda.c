@@ -47,7 +47,7 @@ int main(void)
 {
     UNITY_BEGIN();
 
-    RUN_TEST(test_account);
+    //RUN_TEST(test_account);
     RUN_TEST(test_validate);
     RUN_TEST(test_location);
 
