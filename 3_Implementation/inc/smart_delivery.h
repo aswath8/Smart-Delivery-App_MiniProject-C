@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2021
  * 
  */
-#ifndef SMART_DELIVERY_H
-#define SMART_DELIVERY_H
+#ifndef SMART_DELIVERY_H_
+#define SMART_DELIVERY_H_
 
 /**
  * @brief structure for storing user details
@@ -49,16 +49,14 @@ typedef struct medicine {
     int first, second, third, fourth;
 }medicine;
 
-hotel m[5];
-detail s[50];
-medicine m1[5];
+//detail s[50];
 
 /**
  * @brief Cart details
  * 
  * @return int 
  */
-int cart();
+int cart(int);
 
 /**
  * @brief Login and sign up functions

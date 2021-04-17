@@ -13,6 +13,7 @@
 #include<stdlib.h>
 #include"smart_delivery.h"
 int total;
+hotel m[5];
 
 /**
  * @brief Intitilazing the hotel and food details

@@ -11,8 +11,14 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
+
+#ifndef SMART_DELIVERY_H_
 #include"smart_delivery.h"
-int total;
+#endif
+
+medicine m1[5];
+
+int total1;
 
 /**
  * @brief Intializing the medicine values and cost
@@ -58,23 +64,23 @@ int medicine_order(int medicine)
         printf(" Count of %s\t",
                m1[shop_id].first_medicine);
         scanf("%d", &n);
-        total = total + (n * m1[shop_id].first);
+        total1 = total1 + (n * m1[shop_id].first);
     }
     else if ((medicine % 3) == 2) {
         printf("Please Enter the ");
         printf("Count of %s\t",
                m1[shop_id].second_medicine);
         scanf("%d", &n);
-        total = total + (n * m1[shop_id].second);
+        total1 = total1 + (n * m1[shop_id].second);
     }
     else if ((medicine % 3) == 0) {
         printf("Please Enter the ");
         printf("Count of %s\t",
                m1[shop_id].third_medicine);
         scanf("%d", &n);
-        total = total + (n * m1[shop_id].third);
+        total1 = total1 + (n * m1[shop_id].third);
     }
-    return total;
+    return total1;
 }
 /**
  * @brief Main function to display the medicines thier cost and for fetching the inputs and processing
@@ -84,7 +90,7 @@ int medicine_order(int medicine)
 int Medicine()
 {
     int medicine,p=0;
-    total=0;
+    total1=0;
     int loop_control=0;
     medicine_initialize();
     while (loop_control==0) {
