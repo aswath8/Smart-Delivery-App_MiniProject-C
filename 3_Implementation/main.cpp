@@ -20,11 +20,11 @@
 
 int main()
 {
-
+    /*
     const std::string ADDRESS("tcp://broker.hivemq.com:1883");
-    const std::string CLIENT_ID("mqtizer-1618668155172");
+    const std::string CLIENT_ID("mqtizer-1618738314805");
 
-    const std::string TOPIC { "loc" };
+    const std::string TOPIC { "Loc" };
     const std::string PAYLOAD1 { "vit" };
 
     const char* PAYLOAD2 = "Hi there!";
@@ -45,7 +45,7 @@ int main()
         // Publish using a message pointer.
 
         auto msg = mqtt::make_message(TOPIC, PAYLOAD1);
-        msg->set_qos(mqtt::GRANTED_QOS_1);
+        msg->set_qos(mqtt::GRANTED_QOS_0);
 
         cli.publish(msg);
 
@@ -62,7 +62,7 @@ int main()
             << exc.get_reason_code() << "]" << std::endl;
         return 1;
     }
-
+    */
 
 
 

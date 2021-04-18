@@ -27,7 +27,7 @@ int login()
     printf("Enter Your Password\t");
     scanf("%s", password);
   
-    FILE* fp = fopen("./src/database.csv", "r");
+    FILE* fp = fopen("database.csv", "r");
     if (!fp) 
     {
 		printf("Can't open file\n");

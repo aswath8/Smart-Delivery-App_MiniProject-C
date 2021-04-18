@@ -23,7 +23,7 @@
  */
 int account_check(char* temp_mail_id,char* temp_password1,char* temp_name,char* temp_mobile)
 {
-    FILE* fp = fopen("src/database.csv", "r");
+    FILE* fp = fopen("database.csv", "r");
     if (!fp) 
     {
 		printf("Can't open file\n");
@@ -67,7 +67,7 @@ int account_check(char* temp_mail_id,char* temp_password1,char* temp_name,char* 
     }
     if (count<2) 
     {
-        FILE* fp = fopen("src/database.csv", "a+");
+        FILE* fp = fopen("database.csv", "a+");
         if (!fp) {
 		    printf("Can't open file\n");
 	    }
