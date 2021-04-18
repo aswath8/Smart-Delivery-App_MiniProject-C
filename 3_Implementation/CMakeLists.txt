@@ -9,6 +9,8 @@ main.cpp src/account_check.cpp src/location.cpp src/medicine.cpp src/validate.cp
 src/cart_order_confirmation.cpp src/Food.cpp src/login_signup.cpp src/otpauthentication.cpp 
 )
 
+include_directories("inc/")
+
 add_executable(mqtt ${SOURCES})
 
 add_executable(mqtt_subscribe mqtt_subscribe.cpp src/mqtt_subscriber_helper.cpp)

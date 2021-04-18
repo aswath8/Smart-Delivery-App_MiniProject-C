@@ -14,9 +14,7 @@
 #include"smart_delivery.h"
 
 
-#include "rapidjson/document.h"
-#include "rapidjson/writer.h"
-#include "rapidjson/stringbuffer.h"
+
 #include <iostream>
 
 //#include<iostream>
