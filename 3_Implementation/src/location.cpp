@@ -45,15 +45,20 @@ int location()
     scanf("%s",address2);
     
     const std::string ADDRESS("tcp://broker.hivemq.com:1883");
-    const std::string CLIENT_ID("sdb-01");
+    const std::string CLIENT_ID("bec-sense0880");
 
-    const std::string TOPIC { "loc" };
+    const std::string TOPIC { "loc/sdb00" };
     // const std::string PAYLOAD1 { "vit" };
     const std::string a="a";
     const std::string b="b";
-
-    const std::string json = a+b;// "{"+"\"pickup address\"":address1+","+"\"delivery address\"":address2+"}";
-
+    //const std::string json = a+b;
+    
+    const std::string json = std::string("{")+
+            std::string("\"pickup_addr\":")+ address1+
+            std::string(",")+
+            std::string("\"delivery_addr\":")+address2+
+            std::string("}");
+    
     // Create a client
 
     mqtt::client cli(ADDRESS, CLIENT_ID,nullptr);
