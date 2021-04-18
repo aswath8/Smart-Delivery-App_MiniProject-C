@@ -54,10 +54,12 @@ int location()
     //const std::string json = a+b;
     
     const std::string json = std::string("{")+
-            std::string("\"pick_adr\":")+ address1+
-            std::string(",")+
-            std::string("\"del_adr\":")+address2+
-            std::string("}");
+            std::string("\"pick_adr\":")+ 
+            std::string("\"")+address1+
+            std::string("\",")+
+            std::string("\"del_adr\":")+
+            std::string("\"")+address2+
+            std::string("\"}");
     
     // Create a client
 
