@@ -31,7 +31,7 @@ void otpauthentication()
     const std::string ADDRESS("tcp://broker.hivemq.com:1883");
     const std::string CLIENT_ID("bec-sense0880");
 
-    const std::string TOPIC { "otp/sdb00" };
+    const std::string TOPIC { "sdb00/otp" };
     // const std::string PAYLOAD1 { "vit" };
     const std::string json="verified";
     
