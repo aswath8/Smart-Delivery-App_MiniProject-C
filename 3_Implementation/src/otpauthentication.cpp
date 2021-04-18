@@ -12,12 +12,29 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include <cstdlib>
+#include <string>
+#include <cstring>
+#include <cctype>
+#include <thread>
+#include <chrono>
+#include <memory>
+#include "mqtt/async_client.h"
+#include "mqtt/client.h"
+
 /**
  * @brief For displaying OTP, getting input and comparing
  * 
  */
 void otpauthentication()
 {
+    const std::string ADDRESS("tcp://broker.hivemq.com:1883");
+    const std::string CLIENT_ID("bec-sense0880");
+
+    const std::string TOPIC { "otp/sdb00" };
+    // const std::string PAYLOAD1 { "vit" };
+    const std::string json="verified";
+    
     char str[63] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     int n = strlen(str);
     int inp;
@@ -34,6 +51,39 @@ void otpauthentication()
     if(res==0)
     {
         printf("OTP is Verified..Thanks for Purchasing\n");
+
+        mqtt::client cli(ADDRESS, CLIENT_ID,nullptr);
+
+        mqtt::connect_options connOpts;
+        connOpts.set_keep_alive_interval(20);
+        connOpts.set_clean_session(true);
+
+        try {
+            // Connect to the client
+
+            cli.connect(connOpts);
+
+            // Publish using a message pointer.
+
+            auto msg = mqtt::make_message(TOPIC, json);
+            msg->set_qos(mqtt::GRANTED_QOS_0);
+
+            cli.publish(msg);
+
+            // Now try with itemized publish.
+
+            // cli.publish(TOPIC, json, strlen(json), 2, false);
+
+            // Disconnect
+
+            cli.disconnect();
+        }
+        catch (const mqtt::exception& exc) {
+            std::cerr << "Error: " << exc.what() << " ["
+                << exc.get_reason_code() << "]" << std::endl;
+        }
+
+
     }
     else
     {
