@@ -47,7 +47,7 @@ int location()
     const std::string ADDRESS("tcp://broker.hivemq.com:1883");
     const std::string CLIENT_ID("bec-sense0880");
 
-    const std::string TOPIC { "sdb00/loc" };
+    const std::string TOPIC { "sdbAA/loc" };
     // const std::string PAYLOAD1 { "vit" };
     const std::string a="a";
     const std::string b="b";
