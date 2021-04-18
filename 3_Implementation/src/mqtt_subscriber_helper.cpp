@@ -140,7 +140,7 @@ class callback : public virtual mqtt::callback,
         std::cout<<d["payload"].IsString();
         Value& s = d["payload"];
         std::string isverified = s.GetString();
-        std::cout<<"\nMy received string: "<<isverified<<" end---\n";
+        std::cout<<"\nMy received string: "<<isverified<<"\n";
 
         // 3. Stringify the DOM
         StringBuffer buffer;
@@ -148,7 +148,7 @@ class callback : public virtual mqtt::callback,
         d.Accept(writer);
 
         // Output {"project":"rapidjson","stars":11}
-        std::cout << buffer.GetString() << std::endl;
+        //std::cout << buffer.GetString() << std::endl;
 	}
 
 	void delivery_complete(mqtt::delivery_token_ptr token) override {}

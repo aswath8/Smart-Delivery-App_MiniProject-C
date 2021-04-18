@@ -41,6 +41,8 @@ int location()
     scanf("%s",address1);
     printf("\nPlease provide the delivery address: ");
     scanf("%s",address2);
+
+    eedfe
     
     const std::string ADDRESS("tcp://broker.hivemq.com:1883");
     const std::string CLIENT_ID("bec-sense0880");
@@ -54,7 +56,8 @@ int location()
     const std::string json = std::string("{")+
             std::string("\"pick_adr\":")+ address1+
             std::string(",")+
-            std::string("\"del_adr\":")+address2+
+            std::string("\"del_adr\":")+address2++222
+            fwfw
             std::string("}");
     
     // Create a client
