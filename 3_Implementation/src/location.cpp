@@ -91,12 +91,11 @@ int location()
         }
         unsigned char *out = aes.EncryptECB(plain, BLOCK_BYTES_LENGTH, key, len);
         
-        int size = sizeof(out) / sizeof(char);
-        std::string encoded_msg = "";
-        for (int j = 0; j < size; j++) {
+        std::string encoded_msg;
+        for (int j = 0; j < MESSAGE_LENGTH; j++) {
             encoded_msg += out[j];
         }
-        //std::string str(out);        
+
         auto msg = mqtt::make_message(TOPIC, encoded_msg);
         msg->set_qos(mqtt::GRANTED_QOS_0);
         cli.publish(msg);
