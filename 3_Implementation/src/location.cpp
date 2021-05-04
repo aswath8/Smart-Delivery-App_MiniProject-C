@@ -29,7 +29,11 @@
 #include <memory>
 #include "mqtt/async_client.h"
 #include "mqtt/client.h"
+#include <cstring>
 
+#include "../inc/aes.h"
+
+const unsigned int BLOCK_BYTES_LENGTH = 16 * sizeof(unsigned char);
 
 /**
  * @brief Location details
@@ -75,10 +79,35 @@ int location()
         cli.connect(connOpts);
 
         // Publish using a message pointer.
-
-        auto msg = mqtt::make_message(TOPIC, json);
+        AES aes(128);
+        unsigned char key[] = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f };
+        unsigned char right[] = { 0x69, 0xc4, 0xe0, 0xd8, 0x6a, 0x7b, 0x04, 0x30, 0xd8, 0xcd, 0xb7, 0x80, 0x70, 0xb4, 0xc5, 0x5a, 
+                                    0x07, 0xfe, 0xef, 0x74, 0xe1, 0xd5, 0x03, 0x6e, 0x90, 0x0e, 0xee, 0x11, 0x8e, 0x94, 0x92, 0x93, 
+        };
+        unsigned int len = 0;
+        std::string s(json);
+        unsigned char plain[100];
+        int i;
+        for (i = 0; i < sizeof(plain); i++) 
+        {
+        plain[i] = s[i];
+        }
+        unsigned char *out = aes.EncryptECB(plain, (BLOCK_BYTES_LENGTH * 2) * sizeof(unsigned char), key, len);
+        
+        /*unsigned char *innew = aes.DecryptECB(out, BLOCK_BYTES_LENGTH, key);
+        cout<<out<<'\n';*/
+        
+        //delete[] innew;
+        int size = sizeof(out) / sizeof(char);
+        int i;
+        string s = "";
+        for (i = 0; i < size; i++) {
+            s = s + &out[i];
+        }
+        //std::string str(out);        
+        auto msg = mqtt::make_message(TOPIC, s);
         msg->set_qos(mqtt::GRANTED_QOS_0);
-
+        //delete[] out;
         cli.publish(msg);
 
         // Now try with itemized publish.

@@ -18,10 +18,9 @@
 
 
 
+
 int main()
 {
-    
-
     int input,choice=1,otp=0;
     char input_repeat[20];
     printf("Welcome to Smart delivery APP\n");
