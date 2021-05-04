@@ -13,7 +13,7 @@ include_directories("inc/")
 
 add_executable(mqtt ${SOURCES})
 
-add_executable(mqtt_subscribe mqtt_subscribe.cpp src/mqtt_subscriber_helper.cpp)
+add_executable(mqtt_subscribe mqtt_subscribe.cpp src/mqtt_subscriber_helper.cpp src/aes.cpp)
 
 target_include_directories(mqtt PUBLIC ${PROJECT_SOURCE_DIR}/inc
 )

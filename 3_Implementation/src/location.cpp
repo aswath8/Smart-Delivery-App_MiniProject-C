@@ -31,7 +31,7 @@
 
 #include "../inc/aes.h"
 
-const unsigned int MESSAGE_LENGTH = 200;
+const unsigned int MESSAGE_LENGTH = 100;
 const unsigned int BLOCK_BYTES_LENGTH = MESSAGE_LENGTH * sizeof(unsigned char);
 
 /**
@@ -91,11 +91,25 @@ int location()
         }
         unsigned char *out = aes.EncryptECB(plain, BLOCK_BYTES_LENGTH, key, len);
         
-        std::string encoded_msg;
+        //cout<<"\n out "<<out;
+        std::string encoded_msg="";
         for (int j = 0; j < MESSAGE_LENGTH; j++) {
             encoded_msg += out[j];
         }
-
+        //cout<<"\nEncode msg "<<encoded_msg;
+        //cout<<"\n sz out "<<sizeof(out)<<", sz enc "<< sizeof(encoded_msg);
+        
+        /*
+        unsigned char pp[MESSAGE_LENGTH];
+        for (int i = 0; i < MESSAGE_LENGTH; i++) 
+        {
+        pp[i] = encoded_msg[i];
+        }
+        unsigned char *innew = aes.DecryptECB(pp, BLOCK_BYTES_LENGTH, key);
+        cout<<"Decoded message: "<<innew<<'\n';
+        */
+       
+        //std::string str(out);        
         auto msg = mqtt::make_message(TOPIC, encoded_msg);
         msg->set_qos(mqtt::GRANTED_QOS_0);
         cli.publish(msg);

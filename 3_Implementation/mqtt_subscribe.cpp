@@ -9,6 +9,7 @@
 #include <vector>
 #include <functional>
 #include "mqtt/client.h"
+#include "inc/aes.h"
 
 using namespace std;
 using namespace std::chrono;
@@ -18,6 +19,11 @@ const string CLIENT_ID		{ "paho_f3fwefewfw" };
 
 constexpr int QOS_0 = 0;
 constexpr int QOS_1 = 1;
+unsigned char key[] = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f };
+AES aes(128);
+
+const unsigned int MESSAGE_LENGTH = 100;
+const unsigned int BLOCK_BYTES_LENGTH = MESSAGE_LENGTH * sizeof(unsigned char);
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -25,22 +31,28 @@ constexpr int QOS_1 = 1;
 using handler_t = std::function<bool(const mqtt::message&)>;
 
 // Handler for data messages (i.e. topic "data/#")
-bool data_handler(const mqtt::message& msg)
+std::string data_handler(const mqtt::message& msg)
 {
-	cout << msg.get_topic() << ": " << msg.to_string() << endl;
+	//cout << msg.get_topic() << ": " << msg.to_string() << endl;
+	
 
-	return false;
-}
-
-// Handler for command messages (i.e. topic "command")
-// Return false to exit the application
-bool command_handler(const mqtt::message& msg)
-{
-	if (msg.to_string() == "exit" || true) {
-		cout << "Exit command received" << endl;
-		return false;
+	std::string s(msg.to_string());
+	unsigned char plain[MESSAGE_LENGTH];
+	for (int i = 0; i < MESSAGE_LENGTH; i++) 
+	{
+	plain[i] = s[i];
 	}
-	return true;
+	unsigned char *innew = aes.DecryptECB(plain, BLOCK_BYTES_LENGTH, key);
+	cout<<"Decoded message: "<<innew<<'\n';
+	std::string decoded_msg;
+	for (int j = 0; j < sizeof(innew); j++) {
+		decoded_msg += innew[j];
+	}
+	cout<<"\nDecoded message: "<<decoded_msg<<'\n';
+
+	//delete[] innew;
+	//return decoded_msg;
+	return msg.get_topic();
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -56,12 +68,6 @@ int main(int argc, char* argv[])
 		.clean_session(false)
 		.finalize();
 
-	// Dispatch table to handle incoming messages based on Subscription ID's.
-	std::vector<handler_t> handler {
-		data_handler,
-		command_handler
-	};
-
 	try {
 		cout << "Connecting to the MQTT server..." << flush;
 		mqtt::connect_response rsp = cli.connect(connOpts);
@@ -74,12 +80,7 @@ int main(int argc, char* argv[])
 			mqtt::properties props1 {
 				{ mqtt::property::SUBSCRIPTION_IDENTIFIER, 1 },
 			};
-			cli.subscribe("sdbAA/otp", QOS_0, subOpts, props1);
-
-			mqtt::properties props2 {
-				{ mqtt::property::SUBSCRIPTION_IDENTIFIER, 2 },
-			};
-			cli.subscribe("sdbAA/loc", QOS_1, subOpts, props2);
+			cli.subscribe("sdbAA/loc", QOS_0, subOpts, props1);
 
 			std::cout << "OK" << std::endl;
 		}
@@ -101,8 +102,8 @@ int main(int argc, char* argv[])
 										   mqtt::property::SUBSCRIPTION_IDENTIFIER);
 
 				// Dispatch to a handler function based on the Subscription ID
-				if (!(handler[subId-1])(*msg))
-					break;
+				std::string d = data_handler(*msg);
+				std::cout<<d;
 			}
 			else if (!cli.is_connected()) {
 				cout << "Lost connection" << endl;
