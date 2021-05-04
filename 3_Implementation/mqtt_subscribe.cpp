@@ -50,9 +50,9 @@ std::string data_handler(const mqtt::message& msg)
 	}
 	cout<<"\nDecoded message: "<<decoded_msg<<'\n';
 
-	//delete[] innew;
-	//return decoded_msg;
-	return msg.get_topic();
+	delete[] innew;
+	return decoded_msg;
+	//return msg.get_topic();
 }
 
 /////////////////////////////////////////////////////////////////////////////
