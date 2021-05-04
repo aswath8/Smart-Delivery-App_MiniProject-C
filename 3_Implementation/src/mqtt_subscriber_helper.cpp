@@ -7,9 +7,15 @@
 #include <thread>
 #include <chrono>
 #include "mqtt/async_client.h"
+
+#include "rapidjson/document.h"
+#include "rapidjson/writer.h"
+#include "rapidjson/stringbuffer.h"
+using namespace rapidjson;
+
 const std::string SERVER_ADDRESS("tcp://broker.hivemq.com:1883");
 const std::string CLIENT_ID("bec-senseSub01");
-const std::string TOPIC("sdb00/otp");
+const std::string TOPIC("sdbAA/otp");
 
 const int	QOS = 1;
 const int	N_RETRY_ATTEMPTS = 5;
@@ -123,6 +129,26 @@ class callback : public virtual mqtt::callback,
 		std::cout << "Message arrived" << std::endl;
 		std::cout << "\ttopic: '" << msg->get_topic() << "'" << std::endl;
 		std::cout << "\tpayload: '" << msg->to_string() << "'\n" << std::endl;
+
+        std::string jsonn = msg->to_string(); 
+        const char* json = jsonn.c_str();
+        rapidjson::Document d; 
+        d.Parse(json);
+
+        // 2. Modify it by DOM.
+        assert(d["payload"].IsString());
+        std::cout<<d["payload"].IsString();
+        Value& s = d["payload"];
+        std::string isverified = s.GetString();
+        std::cout<<"\nMy received string: "<<isverified<<"\n";
+
+        // 3. Stringify the DOM
+        StringBuffer buffer;
+        Writer<StringBuffer> writer(buffer);
+        d.Accept(writer);
+
+        // Output {"project":"rapidjson","stars":11}
+        //std::cout << buffer.GetString() << std::endl;
 	}
 
 	void delivery_complete(mqtt::delivery_token_ptr token) override {}
